@@ -20,6 +20,7 @@
 int main(){
     char matrix[ROWS][COLUMNS];
     int posI, posJ;
+    int keypressed=0;
 
     //posicao inicial do personagem
     posI = 0;
@@ -32,7 +33,7 @@ int main(){
     system("cls");
 
     //animação do jogo
-    while(1){        
+    while(keypressed != ESC){        
         gotoxy(0,0);
 
         //posicionar o @ no meio da tela
@@ -46,6 +47,23 @@ int main(){
         
         //faço a posição da @ ir para a direita
         if(posI < (ROWS-1)) posI++;
+        
+         //lendo teclas
+        keypressed = 0;
+        if (kbhit()) keypressed = getch();
+        if(keypressed==ARROWS) keypressed = getch();
+
+        switch (keypressed){
+            case TECLA_A:
+            case LEFT:
+                if(posJ> 0) posJ--; //vai para esquerda
+            break;
+            case TECLA_D:
+            case RIGHT:
+                if (posJ < (COLUMNS-1)) posJ++; //vai para direita
+             break;
+        }
+   
     }
 
     system("pause");
