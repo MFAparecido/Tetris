@@ -55,10 +55,12 @@ int main(){
 
         switch (keypressed){
             case TECLA_A:
+            case TECLA_a:
             case LEFT:
                 if(posJ> 0) posJ--; //vai para esquerda
             break;
             case TECLA_D:
+            case TECLA_d:
             case RIGHT:
                 if (posJ < (COLUMNS-1)) posJ++; //vai para direita
              break;
