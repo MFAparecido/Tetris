@@ -71,3 +71,20 @@ void printMatrix(char matrix[ROWS][COLUMNS]);
 
 
 void drawbar(char matrix[ROWS][COLUMNS], Bloco barra, int simbolo);
+
+/*
+    inicializar a peça do tipo barra
+*/
+
+void initBar(Bloco *barra);
+
+/*
+    rotaciona blocos do jogo
+*/
+
+void rotate(Bloco *barra);
+
+/*
+    verifica a colisão de blocos
+*/
+int collisionDetect(char matrix[ROWS][COLUMNS], Bloco barra);
