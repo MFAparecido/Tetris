@@ -68,12 +68,16 @@ int main(){
             case TECLA_A:
             case TECLA_a:
             case LEFT:
-                if(tijolo.j - ((tijolo.width/2))> 0) tijolo.j--; //vai para esquerda
+                if(tijolo.j - ((tijolo.width/2))> 0)
+                     if(matrix[tijolo.i][tijolo.j - (tijolo.width/2) - 1] == EMPTY)
+                        tijolo.j--; //vai para esquerda
             break;
             case TECLA_D:
             case TECLA_d:
             case RIGHT:
-                if ((tijolo.j + (tijolo.width/2)) < (COLUMNS-1)) tijolo.j++; //vai para direita
+                if ((tijolo.j + (tijolo.width/2)) < (COLUMNS-1))
+                    if(matrix[tijolo.i][tijolo.j + (tijolo.width/2) + 1] == EMPTY)
+                        tijolo.j++; //vai para direita
              break;
             case TECLA_ESPACO:
                 rotate(&tijolo);
